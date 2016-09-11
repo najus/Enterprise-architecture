@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Update Car</title>
+    </h:head>
+    <h:body>
+        <h2>Car List</h2>
+        <h:form>
+            <h:inputHidden value="#{carBean.car.id}"/>
+            Make : <h:inputText id="make" value="#{carBean.car.make}" a:placeholder="Make"/><br></br>
+            Model : <h:inputText id="model" value="#{carBean.car.model}" a:placeholder="Model"/><br></br>
+            Year : <h:inputText id="year" value="#{carBean.car.year}" a:placeholder="Manufacturing Year"/><br></br>
+            Miles : <h:inputText id="miles" value="#{carBean.car.miles}" a:placeholder="Miles"/><br></br>
+            Color : <h:selectOneMenu value="#{carBean.car.color}">
+                <f:selectItems value="#{carBean.colors}" />   		
+            </h:selectOneMenu><br></br>
+            <h:commandButton value="Update Car" action="#{carBean.update()}"/>
+        </h:form> 
+    </h:body>
+</html>
